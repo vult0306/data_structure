@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <math.h>
 
 struct node {
         int data;
@@ -117,6 +118,9 @@ bool isempty(void)
 int main(void)
 {
         printf("tree data example\n");
+        int n = 8;
+        printf("%f\n",log(n)/log(2));
+        return 0;
         insert(27);
         insert(14);
         insert(35);
