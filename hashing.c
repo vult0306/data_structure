@@ -2,13 +2,14 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include "hashing.h"
 
-#define SIZE 20
+// #define SIZE 20
 
-struct dataItem {
-        int data;
-        int key;
-};
+// struct dataItem {
+//         int data;
+//         int key;
+// };
 
 struct dataItem* hashArray[SIZE];
 struct dataItem* dummyItem;
@@ -81,32 +82,4 @@ void display() {
         }
 
         printf("\n");
-}
-
-
-int main(void)
-{
-        dummyItem = (struct dataItem*) malloc(sizeof(struct dataItem));
-        dummyItem->data = -1;  
-        dummyItem->key = -1; 
-
-        insert(1, 21);
-        insert(2, 71);
-        insert(42, 81);
-        insert(52, 91);
-        insert(62, 44);
-        insert(14, 32);
-        insert(17, 11);
-        insert(13, 78);
-        insert(37, 97);
-
-        display();
-        item = search(91);
-
-        if(item != NULL) {
-                printf("Element found: %d\n", item->data);
-        } else {
-                printf("Element not found\n");
-        }
-        return 0;
 }
