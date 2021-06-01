@@ -12,6 +12,9 @@ int test_dynamic_stack(void);
 #ifdef TEST_QUEUE
 int test_queue(void);
 #endif
+#ifdef TEST_TREE
+int test_tree(void);
+#endif
 
 
 int main()
@@ -29,6 +32,9 @@ int main()
 #endif
 #ifdef TEST_QUEUE
     test_queue();
+#endif
+#ifdef TEST_TREE
+    test_tree();
 #endif
 
     return 0;
@@ -96,6 +102,7 @@ int test_dynamic_stack(void)
 #endif
 
 // Driver program to test above functions./
+#ifdef TEST_QUEUE
 int test_queue()
 {
     struct Queue* queue = q_createQueue(1000);
@@ -113,3 +120,46 @@ int test_queue()
  
     return 0;
 }
+#endif
+
+// Driver program to test above functions./
+#ifdef TEST_TREE
+int test_tree()
+{
+    // struct treenode* root = treenode_create(1);
+    // root->left = treenode_create(2);
+    // root->right = treenode_create(3);
+
+    // root->left->left = treenode_create(4);
+    // root->left->right = treenode_create(5);
+    // root->left->right->left = treenode_create(6);
+    // root->left->right->right = treenode_create(7);
+
+    struct treenode *root = NULL;
+    root = treenode_create(1);
+    root->left = treenode_create(2);
+    root->right = treenode_create(3);
+    root->left->left = treenode_create(4);
+    root->left->right = treenode_create(5);
+    root->right->left = treenode_create(6);
+    root->right->right = treenode_create(7);
+
+    printf("Inorder traversal \n");
+    inorder_travesal(root);
+
+    printf("\nPreorder traversal \n");
+    preorder_travesal(root);
+
+    printf("\nPostorder traversal \n");
+    postorder_travesal(root);
+
+    if (isfullbinarytree(root))
+        printf("is a full binary tree\n");
+    else
+        printf("not a full binary tree\n");
+    if (isperfectbinarytree(root))
+        printf("is a perfect binary tree\n");
+    else
+        printf("not a perfect binary tree\n");
+}
+#endif

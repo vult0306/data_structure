@@ -2,6 +2,7 @@
 #define TEST_STATIC_STACK
 #define TEST_DYNAMIC_STACK
 #define TEST_QUEUE
+#define TEST_TREE
 
 #ifdef TEST_HASHING
 #include "hashing.h"
@@ -17,4 +18,8 @@
 
 #ifdef TEST_QUEUE
 #include "queue.h"
+#endif
+
+#ifdef TEST_TREE
+#include "tree.h"
 #endif

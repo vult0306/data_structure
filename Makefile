@@ -2,7 +2,7 @@ IDIR =./inc
 CC=gcc
 CFLAGS=-I$(IDIR)
 
-ODIR=obj
+ODIR=./obj
 LDIR =./lib
 
 LIBS=-lm
@@ -14,7 +14,8 @@ _OBJ =  helloworld.o \
 		hashing.o \
 		static_stack.o \
 		dynamic_stack.o \
-		queue.o
+		queue.o \
+		tree.o
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 
